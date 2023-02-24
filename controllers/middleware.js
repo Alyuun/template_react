@@ -51,7 +51,7 @@ export default async(req, res, next) => {
         // on verrifie si la route est autoriser
         const acces = accesAutorized(pathname,userData)
         // la reponse dans le cas ou la route n'est pas autoriser
-        const response = {response:false, msg:'acces refuser'}
+        const response = {response:false, msg:'acces refusé'}
         
         return acces ? next() : res.json(response)
     }catch(err) {

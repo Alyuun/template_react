@@ -1,9 +1,10 @@
-import React from "react"
+import React from "react";
 const StoreContext = React.createContext([]);
 
 const initialState = {
-    count : 0,
-    data : []
-}
+    panier:[],
+    product:[],
+    user:{}
+};
 
-export {StoreContext, initialState}
+export {StoreContext, initialState};
