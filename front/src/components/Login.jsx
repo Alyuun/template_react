@@ -3,9 +3,11 @@ import { StoreContext } from "../tools/context.js";
 import axios from "axios";
 import { BASE_URL } from "../tools/constante.js";
 import { useNavigate } from "react-router-dom";
-
+ 
 const Login = () => {
     const [ _, dispatch] = useContext(StoreContext);
+    const initialState = {password:'',email:''};
+    const [info , setInfo] = useState(initialState); 
     const [login, setLogin] = useState({
         email: '',
         password: ''
@@ -31,31 +33,29 @@ const Login = () => {
             })
             .then(res => {
                 // message
-                console.log(res);
-                if(res.data.response.id){
+                console.log(res)
+                if(res.data.response.user.id){
                     navigate("/AllProducts");
+                    dispatch({
+                        type: 'LOGIN',
+                        payload: {
+                            user: true,
+                            admin: res.data.response.user.admin,
+                            id: res.data.response.user.id,
+                            nom: res.data.response.user.nom,
+                            prenom: res.data.response.user.prenom,
+                            cart_id: res.data.response.cart_id
+                    }
+                    });
+                // sauvegarde du token dans le localStorage et ajout du token dans le header de Axios                    
+                localStorage.setItem('jwtToken', res.data.response.token);
+                axios.defaults.headers.common['Authorization'] = 'Bearer ' + res.data.response.token;
+                setInfo(initialState);
+                setLogin(true);
+                    
                 }else {
                     alert("Identifiants incorrects");
                 }
-                
-/*                alert(res.data.response.id ? "Identifiants correct" : "Identifiants incorrect")
-                res.data.response.id && navigate("/AllProducts")*/
-                
-                
-
-                // Ajout des info dans le Reducer
-                dispatch({
-                    type: 'LOGIN',
-                    payload: {
-                        user: true,
-                        admin: res.data.response.admin,
-                        id: res.data.response.id,
-                        cart_id: res.data.response.cart_id
-                    }
-                });  
-                // sauvegarde du token dans le localStorage et ajout du token dans le header de Axios
-                localStorage.setItem('jwtToken', res.data.response.token);
-                axios.defaults.headers.common['Authorization'] = 'Bearer ' + res.data.response.token;                
             })
             .catch(err => console.log(err, " => Voici le catch de la fonction submit du login.jsx"));
     };
@@ -67,7 +67,8 @@ const Login = () => {
             <input type='submit'/>
             <button onClick={handleSubmit}>Creer un compte</button>
         </form>
-    )
-}
+    );
+};
 
 export default Login;
+

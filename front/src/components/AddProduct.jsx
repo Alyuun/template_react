@@ -1,8 +1,10 @@
 import axios from "axios";
 import {BASE_URL} from "../tools/constante.js";
 import {useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 const AddProduct = () => {
+    const navigate = useNavigate();
     const [productData, setProductData] = useState({
         picture: "",
         name : "",
@@ -29,7 +31,10 @@ const AddProduct = () => {
         dataFile.append('destination', productData.destination);       
         
         axios.post(`${BASE_URL}/addProduct`, dataFile)
-        .then(res => console.log(res));
+        .then(res => {
+            console.log(res);
+            navigate("/allProducts");
+        });
 
         };
     
@@ -46,8 +51,3 @@ const AddProduct = () => {
 };
 
 export default AddProduct;
-
-/*            name : productData.name,
-            description : productData.description,
-            price : productData.price,
-            destination : productData.destination*/

@@ -4,7 +4,10 @@ const StoreContext = React.createContext([]);
 const initialState = {
     panier:[],
     product:[],
-    user:{}
+    user:{
+        isAdmin : false,
+        isLogged : false
+    }
 };
 
 export {StoreContext, initialState};

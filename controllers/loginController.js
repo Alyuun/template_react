@@ -25,7 +25,7 @@ const generateResponse = async (userDataSQL) => {
             response:true,
             admin,
             token,
-            id:userDataSQL.id,
+            user:userData,
             cart_id:userDataSQL.cart_id
         };
     } catch(err){
@@ -36,6 +36,7 @@ const generateResponse = async (userDataSQL) => {
 
 export default async (req, res) => {
     const {password, email} = req.body;
+    console.log({password, email})
     const sql = "SELECT * FROM users WHERE email = ?";
     const paramsSql = [email];
 
