@@ -46,7 +46,7 @@ const reducer = (state, action) =>{
         case 'LOGOUT' :
             return{
                 ...state,
-                user : {isLogged : false},
+                user : {isLogged : false, isAdmin:false, id:null},
                 isLogged : false,
                 panier:[]
             };

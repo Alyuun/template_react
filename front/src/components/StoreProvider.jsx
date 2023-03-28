@@ -1,6 +1,6 @@
-import React from "react"
-import {reducer} from "../tools/reducer.js"
-import {initialState, StoreContext} from "../tools/context.js"
+import React from "react";
+import {reducer} from "../tools/reducer.js";
+import {initialState, StoreContext} from "../tools/context.js";
 
 const StoreProvider = ({ children }) => {
     const [state, dispatch] = React.useReducer(reducer, initialState);
@@ -9,8 +9,8 @@ const StoreProvider = ({ children }) => {
         <StoreContext.Provider value={[state, dispatch]}>
             {children}
         </StoreContext.Provider>
-    )
-}
+    );
+};
 
-export default StoreProvider
+export default StoreProvider;
 

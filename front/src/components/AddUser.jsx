@@ -42,7 +42,7 @@ const AddUser = () => {
     
     return(
         <form onSubmit={submit} encType="multipart/form-data">
-        <label for="avatar">Choisissez un avatar : </label>
+        <label>Choisissez un avatar : </label>
         <input type='file' name='avatar'/>
             <input type='text' placeholder='nom' name='nom' onChange={handleChange} value={userData.nom} />
             <input type='text' placeholder='prenom' name='prenom' onChange={handleChange} value={userData.prenom} />

@@ -57,7 +57,11 @@ const Login = () => {
                     alert("Identifiants incorrects");
                 }
             })
-            .catch(err => console.log(err, " => Voici le catch de la fonction submit du login.jsx"));
+            .catch(err => {
+                alert("Identifiant ou mot de passe incorrect");
+                console.log(err, " => Voici le catch de la fonction submit du login.jsx");
+            }
+            );
     };
 
     return (

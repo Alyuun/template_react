@@ -18,7 +18,6 @@ const UpdateProduct = () => {
             .then(res => {
                 console.log(res);
                 setproduct(res.data.result[0]);
-                
             })
             .catch(err => console.log(err + " Catch err du useEffect"));
     }, [id]);
@@ -33,7 +32,7 @@ const UpdateProduct = () => {
     const submit = (e) =>{
         e.preventDefault();
     
-        axios.post(`${BASE_URL}/updateproductById`,{id, name:product.name, description:product.description, price:product.price, destination:product.destination})
+        axios.post(`${BASE_URL}/updateproductById`,{id, name:product.name, description:product.description, price:product.price, destination:product.destination, thematique:product.thematique})
             .then((res) => { 
                 setIsValidated(true);
                 console.log(res);
@@ -55,6 +54,8 @@ const UpdateProduct = () => {
                 <input type="number" min="0.00" max="10000.00" placeholder='price' name='price' onChange={handleChange} value={product.price} />
                 <label> Destination : </label>
                 <input type='text' placeholder='destination' name='destination' onChange={handleChange} value={product.destination} />
+                <label>Thématique : </label>
+                <input type="text" placeholder="Thématique" name="thematique" onChange={handleChange} value={product.thematique} />
                 <input type="submit" value="Modifier les informations" />
         </form>   
             )}

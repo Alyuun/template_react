@@ -6,8 +6,10 @@ const initialState = {
     product:[],
     user:{
         isAdmin : false,
-        isLogged : false
-    }
+        isLogged : false,
+        id:null
+    },
+    profile : []
 };
 
 export {StoreContext, initialState};

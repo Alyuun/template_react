@@ -1,8 +1,5 @@
-import React from 'react';
-import Login from ""
-
 const Home = () => {
-        return <h1>Home</h1>
+        return <h1>Home lalalalalal</h1>
 }
 
 export default Home;

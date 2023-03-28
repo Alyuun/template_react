@@ -9,7 +9,7 @@ const Logout = () => {
         dispatch({type : "LOGOUT"});
         localStorage.removeItem('jwtToken')
         delete
-        axios.defaults.headers.common['AZuthorization'];
+        axios.defaults.headers.common['Authorization'];
     }, []);
     
     return(

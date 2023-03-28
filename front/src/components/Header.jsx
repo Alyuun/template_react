@@ -12,35 +12,54 @@ const Header = () => {
 	const navigate = useNavigate();
 
 	const handleClick = () => {
-		navigate("/home");
+		navigate("/");
 	}
 	
 	console.log(state.user);
 
 	return (
 		<Fragment>
-            <header>
-                <div className="header">
-                    <div className="logo_title">
-                      <img onClick={handleClick} src={logo} alt="logo" className="logo"/>
-                      <h1>Travelia</h1>
+            <div className="header_container">
+            
+                <div className="header_menu">
+                
+                  <div className="dropdown">
+                  <a href="#">Par Continent</a>
+                    <div className="dropdown-content">
+                      <a href="#">Europe</a>
+                      <a href="#">Amérique</a>
+                      <a href="#">Asie</a>
+                      <a href="#">Océanie</a>
                     </div>
-<nav role="navigation">
-  <div id="menuToggle">
-    <input type="checkbox"/>
-    <span></span>
-    <span></span>
-    <span></span>
-    <ul id="menu">
-      <a href="#"><li>Par continent</li></a>
-      <a href="#"><li>Par Thématique</li></a>
-      <a href="#"><li>Info</li></a>
-      <a href="#"><li>Contact</li></a>
-    </ul>
-  </div>
-</nav>
-		        </div>
-            </header>
+                  </div>
+                  
+                  <div className="dropdown">
+                    <a href="#">Par Thématique</a>
+                    <div className="dropdown-content">
+                      <a href="#">Famile</a>
+                      <a href="#">Romantique</a>
+                      <a href="#">Traditionnel</a>
+                      <a href="#">Shopping</a>
+                      <a href="#">Détente</a>
+                      <a href="#">Festival</a>
+                    </div>
+                  </div>
+                  <div className="dropdown">
+                    <a href="/contact">Contact</a>
+                    </div>
+                </div>
+            	<div className="header_content">
+            		<div className="header_title">
+            			Travelia
+            		</div>
+            		
+            	</div>
+            	
+            </div>
+
+            <div className="main_container">
+
+            </div>
         <div>
             {state.isLogged == false && (
               <button><NavLink to="/">Se connecter</NavLink></button>)}

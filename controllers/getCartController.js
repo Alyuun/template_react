@@ -1,7 +1,7 @@
 import {asyncQuery} from "../config/database.js";
 
 export default async (req, res) => {
-    const {cart_id} = req.body 
+    const {cart_id} = req.body;
     
     // on recupere l'id des produits qui ce trouve dans le panier de l'utilisataeur 
     const sqlCart = "SELECT product_id FROM products_cart WHERE cart_id = ?"

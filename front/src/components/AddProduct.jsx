@@ -44,6 +44,7 @@ const AddProduct = () => {
         <input type = "text" placeholder = "description" name = "description" onChange = {handleChange} value = {productData.description} />
         <input type = "number" placeholder = "price" name = "price" onChange = {handleChange} value = {productData.price} />
         <input type = "text" placeholder = "destination" name = "destination" onChange = {handleChange} value = {productData.destination} />
+        <input type = "text" placeholder = "thematique" name = "thematique" onChange = {handleChange} value = {productData.thematique} />
         <input type='file' name='picture'/>
         <input type="submit" />
         </form>

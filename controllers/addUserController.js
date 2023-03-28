@@ -15,7 +15,7 @@ export default async (req, res) => {
     const sqlCart = "INSERT INTO cart (user_id) VALUES (?)";
     
     const {nom, prenom, email, password, birthdate, files} = req.body;
-    console.log({});
+    //console.log({});
     
     const mpdHash = await bcrypt.hash(password,saltRounds);
     const paramsSql = [nom, prenom, email, mpdHash, birthdate, files];

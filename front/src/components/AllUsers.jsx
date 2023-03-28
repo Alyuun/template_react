@@ -7,6 +7,7 @@ import {StoreContext} from "../tools/context.js";
 
 
 const AllUsers = () => {
+    const [searchValue, setSearchValue] = useState("");    
     const [user, setUser] = useState({});
     const navigate = useNavigate();
     const [usersList, setUsersList] = useState([]);
@@ -61,15 +62,24 @@ const AllUsers = () => {
             })
             .catch(err => console.log(err + " Catch err du submit"));
     };
+    
+  const productsFilter = usersList.filter((product) =>
+    product.nom.toLowerCase().includes(searchValue.toLowerCase())
+  );
+
+  const handleInputChange = (event) => {
+    setSearchValue(event.target.value);
+  };    
 
     
     return(
         <div>
-            {usersList.map((userData,i) => {
+            <input placeholder="Recherchez votre destination...." value={searchValue} onChange={handleInputChange} />
+            {productsFilter.map((userData,i) => {
                 return(
                 <div key = {i}>
                 
-                        
+                          
                         <img src={`${BASE_URL}/img/${userData.avatar}`} alt={`Avatar de ${userData.nom} ${userData.prenom}`} width="100" height="100" margin="2em" padding="2em"/>
                         <form onSubmit = {(e) => submit(e, userData.id)} encType = "multipart/form-data">
                             <input type = "file" name = "avatar" />
