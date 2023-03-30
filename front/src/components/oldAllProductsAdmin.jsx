@@ -28,7 +28,7 @@ const AllProduct = () => {
                         <p> description : {product.description} </p>
                         <p> price: {product.price} </p>
                         <p> destination : {product.destination} </p>
-                        <button onClick={() => deleteProduct(product.id)}> X </button>
+                        <button className="myButton" onClick={() => deleteProduct(product.id)}> X </button>
                    </div>
                 )
             })}

@@ -56,7 +56,7 @@ const UpdateProduct = () => {
                 <input type='text' placeholder='destination' name='destination' onChange={handleChange} value={product.destination} />
                 <label>Thématique : </label>
                 <input type="text" placeholder="Thématique" name="thematique" onChange={handleChange} value={product.thematique} />
-                <input type="submit" value="Modifier les informations" />
+                <input type="submit" className="myButton"  value="Modifier les informations" />
         </form>   
             )}
             

@@ -110,9 +110,9 @@ const AllProduct = () => {
                 })}
               </select>
               
-              <input type="submit" value='Rechercher'/>
+              <input type="submit" className="myButton"  value='Rechercher'/>
             </form>
-              <button onClick={resetSearch}>Reset</button>
+              <button className="myButton" onClick={resetSearch}>Tout effacer</button>
         </div>
         <SearchProduct arrayMap={productsFiltred} />
         <SearchProduct arrayMap={products} />

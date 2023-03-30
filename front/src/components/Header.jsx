@@ -62,11 +62,11 @@ const Header = () => {
             </div>
         <div>
             {state.isLogged == false && (
-              <button><NavLink to="/">Se connecter</NavLink></button>)}
+              <button className="myButton"><NavLink to="/">Se connecter</NavLink></button>)}
             {state.isLogged == true && (
             <Fragment>
               Bonjour {state.user.nom} {state.user.prenom}  
-              <button><NavLink to ="/logout">Se déconnecter</NavLink></button>
+              <button className="myButton"><NavLink to ="/logout">Se déconnecter</NavLink></button>
             </Fragment>
             )}
             <Nav />

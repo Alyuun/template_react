@@ -49,7 +49,7 @@ const AddUser = () => {
             <input type='text' placeholder='email' name='email' onChange={handleChange} value={userData.email} />
             <input type='password' placeholder='password' name='password' onChange={handleChange} value={userData.password}  />
             <p>Date d'anniversaire : <input type='date' name='birthdate' onChange={handleChange} value={userData.birthdate} /></p>
-            <input type='submit'/>
+            <input type='submit' className="myButton" />
         </form>
     );
 };

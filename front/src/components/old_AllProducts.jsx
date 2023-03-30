@@ -85,11 +85,11 @@ const AllProduct = () => {
                         <p> price: {product.price} </p>
                         <p> destination : {product.destination} </p>
                         {state.user.isAdmin === true && (
-                        <button onClick={(e) => handleSubmit(e,product.id)}> Modifier les informations</button>
+                        <button className="myButton" onClick={(e) => handleSubmit(e,product.id)}> Modifier les informations</button>
                         )}
-                        <button onClick={() => addCart(product)}>Ajouter au panier</button>
+                        <button className="myButton" onClick={() => addCart(product)}>Ajouter au panier</button>
                         {state.user.isAdmin === true && (
-                        <button onClick={() => {deleteProduct(product.id)}}> Supprimer le produit </button>
+                        <button className="myButton" onClick={() => {deleteProduct(product.id)}}> Supprimer le produit </button>
                         )}
                         </div>
                    </div>

@@ -58,13 +58,13 @@ const Cart = () => {
                         <p> description : {product.description} </p>
                         <p> price: {product.price} </p>
                         <p> destination : {product.destination} </p>
-                        <button onClick={() => removeCart(product)}>Retirer du panier</button>
+                        <button className="myButton" onClick={() => removeCart(product)}>Retirer du panier</button>
                    </div>
                 );
             })}
         </ul>
         <p>Total : {parseFloat(state.panier.reduce((acc, product) => acc + product.price, 0))}</p>
-        <button onClick={submitCart}>Commander</button>
+        <button className="myButton" onClick={submitCart}>Commander</button>
         </div>
         );
 };

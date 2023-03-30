@@ -55,7 +55,7 @@ const UpdateUser = () => {
                 <input type='text' placeholder='email' name='email' onChange={handleChange} value={user.email} />
                 <label> Date de naissance : </label>
                 <input type='date' placeholder='birthdate' name='birthdate' onChange={handleChange} value={user.birthdate} />
-                <input type="submit" value="Modifier les informations" />
+                <input type="submit" className="myButton"  value="Modifier les informations" />
         </form>   
             )}
             

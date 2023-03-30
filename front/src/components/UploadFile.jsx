@@ -42,7 +42,7 @@ const UploadFile = () => {
                 <label name='avatar'>
                     <input type='file' name='avatar'/>
                 </label>
-                <input type='submit' value='submit' width="100" height="100"/>
+                <input type='submit' className="myButton"  value='submit' width="100" height="100"/>
             </form>
         </Fragment>
     );

@@ -68,8 +68,8 @@ const Login = () => {
         <form onSubmit={submit}>
             <input type="text" name="email" placeholder="login" onChange={handleChange} value={login.email} />
             <input type="password" name="password" placeholder="Password" onChange={handleChange} value={login.password} />
-            <input type='submit'/>
-            <button onClick={handleSubmit}>Creer un compte</button>
+            <input type='submit' className="myButton" />
+            <button classNAme="myButton" onClick={handleSubmit}>Creer un compte</button>
         </form>
     );
 };

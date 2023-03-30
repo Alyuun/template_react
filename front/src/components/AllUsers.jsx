@@ -83,7 +83,7 @@ const AllUsers = () => {
                         <img src={`${BASE_URL}/img/${userData.avatar}`} alt={`Avatar de ${userData.nom} ${userData.prenom}`} width="100" height="100" margin="2em" padding="2em"/>
                         <form onSubmit = {(e) => submit(e, userData.id)} encType = "multipart/form-data">
                             <input type = "file" name = "avatar" />
-                            <input type = "submit" value = "changer d'avatar" />
+                            <input type = "submit" className="myButton"  value = "changer d'avatar" />
                         </form>
                     <ul>
                         <li>Nom:{userData.nom}</li>
@@ -92,8 +92,8 @@ const AllUsers = () => {
                         <li>Birthdate:{userData.birthdate}</li>
                     </ul>
                     
-                    <button onClick={(e) => handleSubmit(e,userData.id)}> Modifier les informations</button>
-                    <button onClick={() => {deleteUser(userData.id) }}> Supprimer l'utilisateur </button>
+                    <button className="myButton" onClick={(e) => handleSubmit(e,userData.id)}> Modifier les informations</button>
+                    <button className="myButton"  onClick={() => {deleteUser(userData.id) }}> Supprimer l'utilisateur </button>
                     
                     
                 </div>    
