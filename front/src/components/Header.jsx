@@ -49,7 +49,7 @@ const Header = () => {
                     </div>
                 </div>
             	<div className="header_content">
-            		<div className="header_title">
+            		<div onClick={handleClick} className="header_title">
             			Travelia
             		</div>
             		

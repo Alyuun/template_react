@@ -107,6 +107,8 @@ img {
   font-size: 7px;
 }
 
+
+
 /*----------------------------------- Style des liens du menu principal au survol ------------------------*/
 
 .header_menu a:hover {
@@ -417,7 +419,7 @@ ul {
 }
 
 .contact-form .theme-btn:hover {
-  color: #ffffff;
+  color: #000000;
   border-color: #000000;
   background: 0 0;
 }
@@ -513,8 +515,8 @@ background-color: #000000;
 padding: 10px 30px;
 border: solid #000000 2px;
 box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
-border-radius: 15px;
-transition : 1000ms;
+/*border-radius: 15px;
+*/transition : 1000ms;
 transform: translateY(0);
 display: flex;
 flex-direction: row;
@@ -525,10 +527,20 @@ margin: 0.2em;
 
 .myButton:hover{
 
-transition : 1000ms;
+transition : 600ms;
 padding: 10px 31px;
 transform : translateY(-0px);
 background-color: #ffffff;
-color: #005a75;
-border: solid 2px #005a75;
+color: #000000;
+border: solid 2px #000000;
+}
+
+/* Je place le .header_title en dernier pour que l'effet passe avant le reste du CSS */
+.header_title:hover {
+  transition : 1000ms;
+  font-size: 20px;
+}
+
+.header_title {
+  transition: 1000ms;
 }
