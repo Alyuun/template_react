@@ -10,7 +10,8 @@ const AddProduct = () => {
         name : "",
         description: "",
         price: "",
-        destination: ""
+        destination: "",
+        thematique: ""
     });
     
     const handleChange = (e) => {
@@ -28,7 +29,8 @@ const AddProduct = () => {
         dataFile.append('name', productData.name);
         dataFile.append('description', productData.description);
         dataFile.append('price', productData.price);
-        dataFile.append('destination', productData.destination);       
+        dataFile.append('destination', productData.destination);
+        dataFile.append('thematique', productData.thematique);
         
         axios.post(`${BASE_URL}/addProduct`, dataFile)
         .then(res => {

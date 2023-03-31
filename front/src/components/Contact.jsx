@@ -1,6 +1,37 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
+import axios from "axios";
+import { BASE_URL } from "../tools/constante.js";
 
 const Contact = () => {
+  
+  const [contactMessage, setContactMessage] = useState({
+    title : "",
+    name : "",
+    message : "",
+    mail : ""
+  });
+  
+  const handleChange = (e) => {
+    const {name, value} = e.target;
+    setContactMessage({...contactMessage, [name]: value});
+  };
+  
+  const submit = (e) => {
+    e.preventDefault();
+    
+    axios.post(`${BASE_URL}/contact`,{
+      title : contactMessage.title,
+      name : contactMessage.name,
+      message : contactMessage.message,
+      mail : contactMessage.mail
+    })
+    .then(res => {
+      console.log(res);
+      alert("Votre message a bien été envoyé");
+    })
+    .catch(err => console.log(err));
+    };
+  
   return (
     <Fragment>
       <section className="contact-page-section">
@@ -8,7 +39,7 @@ const Contact = () => {
       		<div className="sec-title">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d86684.62084068525!2d-1.630373951981032!3d47.23821141089867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4805ee81f0a8aead%3A0x40d37521e0ded30!2sNantes!5e0!3m2!1sfr!2sfr!4v1679920467001!5m2!1sfr!2sfr"
               loading="lazy" 
-              referrerpolicy="no-referrer-when-downgrade"
+              referrerPolicy="no-referrer-when-downgrade"
               width="50%"
               height="450"
               frameBorder="0"
@@ -24,14 +55,13 @@ const Contact = () => {
       				<div className="form-column">
       					<div className="inner-column">
       						<div className="contact-form">
-      							<form method="post" action="sendemail.php" id="contact-form">
+      							<form onSubmit = {submit} id="contact-form">
       								<div className="row clearfix">
-      								  
-
       									<div className="form-group">
-      									<input type="text" voidlue="titre" placeHolder="Titre"/>
-      									<input type="text" voidlue="nom" placeHolder="Votre nom"/>
-      										<textarea name="message" placeholder="Message"></textarea>
+      									<input type="text" name="title" onChange = {handleChange}  placeholder="Titre" value = {contactMessage.title}/>
+      									<input type="text" name="name" value = {contactMessage.name} onChange = {handleChange} placeholder="Votre nom"/>
+      									<input type="mail" name="mail" value = {contactMessage.mail} onChange = {handleChange} placeholder="Votre mail"/>      									
+      										<textarea name="message" placeholder="Message" value = {contactMessage.message} onChange = {handleChange} ></textarea>
       									</div>
       									<div className="form-group">
       										<button type="submit" className="theme-btn">Envoyer</button>

@@ -4,6 +4,7 @@ import loginController from "../controllers/loginController.js";
 import addUserController from "../controllers/addUserController.js";
 import addCartController from "../controllers/addCartController.js";
 import getCartController from "../controllers/getCartController.js";
+import contactController from "../controllers/contactController.js";
 import allUsersController from "../controllers/allUsersController.js";
 import addProductController from "../controllers/addProductController.js";
 import middlewareUploadFile from "../controllers/middlewareUploadFile.js";
@@ -23,6 +24,7 @@ import deleteProductByIdController from "../controllers/deleteProductByIdControl
 import updateProductByIdController from "../controllers/updateProductByIdController.js";
 
 
+
 const router = express.Router();
 
 // GET
@@ -31,7 +33,7 @@ router.get("/allProducts", allProductsController);
 router.get("/allUsers", middleware, allUsersController);
 router.get("/searchFilter", searchFilterController);
 router.get("/relogged", checkTokenController);
-router.get("/getThematique", getThematiqueController)
+router.get("/getThematique", getThematiqueController);
 
 // POST
 
@@ -50,5 +52,6 @@ router.post("/getProductById", getProductByIdController);
 router.post("/updateAvatarById", middlewareUploadFile ,updateAvatarByIdController);
 router.post("/updateProductById", updateProductByIdController);
 router.post("/deleteToCart", deleteToCartController);
+router.post("/contact", contactController);
 
 export default router;
