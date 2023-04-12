@@ -7,23 +7,11 @@ import { StoreContext } from "../tools/context.js";
           </NavLink>*/
 
 const Nav = (props) => {
-  const [state, dispatch] = useContext(StoreContext);
+  const [state] = useContext(StoreContext);
   
   return (
     <nav>
       <ul>
-        {state.user.isLogged == false && (
-        <li>
-          <NavLink to="/login">
-            Se connecter
-          </NavLink>
-        </li>
-        )}
-        <li>
-          <NavLink to="/addUser">
-            Creer un compte
-          </NavLink>
-        </li>
         {state.user.isAdmin == true && (
         <li>
           <NavLink to="/allUsers">
@@ -49,11 +37,6 @@ const Nav = (props) => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/uploadFile">
-            Télécharger un fichier
-          </NavLink>
-        </li>  
-        <li>
         </li>          
       </ul>
     </nav>
@@ -62,3 +45,18 @@ const Nav = (props) => {
 
 export default Nav;
 
+/*        {state.user.isLogged == false && (
+        <li>
+          <NavLink to="/login">
+            Se connecter
+          </NavLink>
+        </li>
+        )}
+
+*/
+
+/*        <li>
+          <NavLink to="/addUser">
+            Creer un compte
+          </NavLink>
+        </li>*/

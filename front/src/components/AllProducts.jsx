@@ -98,9 +98,9 @@ const AllProduct = () => {
             
             <form onSubmit={testOnClick}>
               <input placeholder="Destination" name='destination' value={searchValue.destination}  onChange={handleChange} />
-              <input placeholder="minPrice" name='minPrice' value={searchValue.minPrice} onChange={handleChange} />
-              <input placeholder="maxPrice" name='maxPrice' value={searchValue.maxPrice} onChange={handleChange} />
-              <input placeholder="Voyageurs"  name='voyageurs' value={searchValue.voyageurs} onChange={handleChange} />
+              <input placeholder="Prix minimum" name='minPrice' value={searchValue.minPrice} onChange={handleChange} />
+              <input placeholder="Prix maximum" name='maxPrice' value={searchValue.maxPrice} onChange={handleChange} />
+              <input placeholder="Nombre de voyageurs"  name='voyageurs' value={searchValue.voyageurs} onChange={handleChange} />
               <select name="thematique" value={searchValue.thematique} onChange={(e) => handleChange(e)}>
                 <option>Choisissez une thématique</option>
                 {thematiques.map((product) => {

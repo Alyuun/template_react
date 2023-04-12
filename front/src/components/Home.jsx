@@ -1,5 +1,12 @@
+import AllProduct from "./AllProducts.jsx";
+import { Fragment } from "react";
+
 const Home = () => {
-        return <h1>Home lalalalalal</h1>
-}
+        return(
+            <Fragment>
+                <AllProduct />
+            </Fragment>
+            );
+};
 
 export default Home;

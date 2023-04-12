@@ -60,7 +60,7 @@ const Contact = () => {
       									<div className="form-group">
       									<input type="text" name="title" onChange = {handleChange}  placeholder="Titre" value = {contactMessage.title}/>
       									<input type="text" name="name" value = {contactMessage.name} onChange = {handleChange} placeholder="Votre nom"/>
-      									<input type="mail" name="mail" value = {contactMessage.mail} onChange = {handleChange} placeholder="Votre mail"/>      									
+      									<input type="email" name="mail" value = {contactMessage.mail} onChange = {handleChange} placeholder="Votre mail"/>      									
       										<textarea name="message" placeholder="Message" value = {contactMessage.message} onChange = {handleChange} ></textarea>
       									</div>
       									<div className="form-group">
