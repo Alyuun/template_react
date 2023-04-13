@@ -22,6 +22,7 @@ import getProductByIdController from "../controllers/getProductByIdController.js
 import updateAvatarByIdController from "../controllers/updateAvatarByIdController.js";
 import deleteProductByIdController from "../controllers/deleteProductByIdController.js";
 import updateProductByIdController from "../controllers/updateProductByIdController.js";
+import detailProductByIdController from "../controllers/detailProductByIdController.js";
 
 
 
@@ -53,5 +54,6 @@ router.post("/updateAvatarById", middlewareUploadFile ,updateAvatarByIdControlle
 router.post("/updateProductById", updateProductByIdController);
 router.post("/deleteToCart", deleteToCartController);
 router.post("/contact", contactController);
+router.post("/detailProductById", detailProductByIdController);
 
 export default router;

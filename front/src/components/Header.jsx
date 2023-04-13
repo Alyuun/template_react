@@ -44,9 +44,10 @@ const Header = () => {
                 <ul>
                   <li>
                     <ul>
-                      <li><a href="#">Famile</a></li>
+                      <li><a href="#">Famille</a></li>
+                      <li><a href="#">Temples et Monuments</a></li>
                       <li><a href="#">Romantique</a></li>
-                      <li><a href="#">Traditionnel</a></li>
+                      <li><a href="#">Traditions</a></li>
                       <li><a href="#">Shopping</a></li>
                       <li><a href="#">Détente</a></li>
                       <li><a href="#">Festival</a></li>
@@ -76,8 +77,8 @@ const Header = () => {
                 <a href="/addUser">Créer un compte</a>
               </div>
             )}
-            <div className="header_cart_icon">
-              <i onClick={clickCart} className="fas fa-cart-plus"></i>
+            <div>
+              <i onClick={clickCart} className="fas fa-cart-arrow-down"></i>
             </div>
             <div className="dropdown">
               <a href="/contact">Contact</a>

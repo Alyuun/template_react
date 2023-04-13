@@ -73,9 +73,9 @@ const Contact = () => {
       				</div>
       				<div className="info-column">
       					<div className="inner-column">
-      						<h2>Contact informations</h2>
+      						<h2>Informations de contact : </h2>
       						<ul className="list-info">
-      							<li><i className="fa fa-address-card"></i>44 rue de Nantes, 44000 Nantes, France</li>
+      							<li><i className="fas fa-address-card"></i>44 rue de Nantes, 44000 Nantes, France</li>
       							<li><i className="far fa-envelope"></i>travelia@travelia.com</li>
       							<li>
       							</li>

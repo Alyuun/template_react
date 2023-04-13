@@ -30,6 +30,7 @@ const SearchProduct = ({ arrayMap }) => {
         cart_id: state.user.cart_id,
         product_id: product.id,
       });
+      alert("Circuit ajouté dans votre panier")
     }
     else {
       alert("Vous avez déjà ce circuit dans votre panier");
@@ -42,12 +43,10 @@ const SearchProduct = ({ arrayMap }) => {
     navigate(`/updateProduct/${id}`);
   };
   
-  // fonction pour afficher le produit de manière dynamique
-  const handleSubmitShow = (e, id) => {
+  const handleShow = (e, id) => {
     e.preventDefault();
-    navigate(`/sdfgh/${id}`);
+    navigate(`/detailProductById/${id}`);
   };
-
   // Fonction pour supprimer un produit
   const deleteProduct = (id) => {
     axios
@@ -62,69 +61,74 @@ const SearchProduct = ({ arrayMap }) => {
       );
   };
 
-    return (
-      // Affichage de la liste des produits
-      <div className="articles-section">
-        {
-          // Vérification si la liste de produits est vide ou non
-          arrayMap.length > 0 ?
-            // Si la liste contient des produits
-            arrayMap.map((product, i) => (
-              <li key={i}>
-                <section className="articles">
-                  <div className="article" onClick={(e) => handleSubmitShow(e, product.id)}>
-                    <div className="article-img">
-                      <img src={`${BASE_URL}/img/${product.picture}`} alt={product.name} />
-                    </div>
-                    <div className="article-contain">
-                      <h2>{product.name}</h2>
-                      {state.user.isAdmin === true && (
-                        <p> id : {product.id}</p>)}
-                      <div className="product-rrp">{product.price + 350}€</div>
-                      <div className="product-price">{product.price}€</div>
-                      <div className="button-test">
-                        <div className="articles-button">
-                          <i className="fas fa-cart-plus" onClick={() => addCart(product)}></i>
-                          {state.user.isAdmin === true && (
-                            <button className="myButton" onClick={(e) => handleSubmit(e, product.id)}>Modifier</button>)}
-                          {state.user.isAdmin === true && (
-                            <button className="myButton" onClick={() => {deleteProduct(product.id)}}>Supprimer</button>)}
-                        </div>
+  return (
+    // Affichage de la liste des produits
+    <div className="articles-section">
+      {
+        // Vérification si la liste de produits est vide ou non
+        arrayMap.length > 0 ?
+          // Si la liste contient des produits
+          arrayMap.map((product, i) => (
+            <li key={i}>
+              <section className="articles">
+                <div className="article">
+                  <div className="article-img">
+                    {state.user.isAdmin === true && (
+                        <p> id : {product.id}</p>
+                    )}  
+                    <img onClick={(e) => handleShow(e, product.id)} src={`${BASE_URL}/img/${product.picture}`} alt={product.name} />
+                  </div>
+                  <div className="article-contain">
+                    <h2 id="article-title" onClick={(e) => handleShow(e, product.id)} >{product.name}</h2>
+                    {product.thematique === "Romantique" && ( <p><i className="fas fa-heart"></i>{product.thematique}</p>)}
+                    {product.thematique === "Temples et monuments" && ( <p><i className="fas fa-landmark"></i>{product.thematique}</p>)}
+                    {product.thematique === "Détente" && ( <p><i className="fas fa-water"></i>{product.thematique}</p>)}
+                    {product.thematique === "Festival" && ( <p><i className="fas fa-music"></i>{product.thematique}</p>)}
+                    {product.thematique === "Traditions" && ( <p><i className="fas fa-fish"></i>{product.thematique}</p>)}
+                    {product.thematique === "Famille" && ( <p><i className="fas fa-dog"></i>{product.thematique}</p>)}
+                    {product.thematique === "Shopping" && ( <p><i className="fas fa-store"></i>{product.thematique}</p>)}                    
+                    <div className="product-rrp">{product.price + 350}€</div>
+                    <div className="product-price">{product.price}€</div>
+                    <div className="button-test">
+                      <div className="articles-button">
+                        <i className="fas fa-cart-plus" onClick={() => addCart(product)}></i>
+                        {state.user.isAdmin === true && (
+                          <button className="myButton" onClick={(e) => handleSubmit(e, product.id)}>Modifier</button>)}
+                        {state.user.isAdmin === true && (
+                          <button className="myButton" onClick={() => {deleteProduct(product.id)}}>Supprimer</button>)}
                       </div>
                     </div>
                   </div>
-                </section>
-              </li>
-            )):
-            arrayMap.map((product) => (
-              <div className="article-container">
-                <div className="slide">
-                  <article>
-                    <li key={product.id}>
-                      <h2>{product.name}</h2>
-                      <img src={`${BASE_URL}/img/${product.picture}`} alt={product.name} width="100" height="100" margin="2em" padding="2em"/>
-                      {state.user.isAdmin === true && (
-                        <p> id : {product.id}</p>
-                      )}
-                      <p>{product.description}</p>
-                      <p>Prix: {product.price}€</p>
-                      <p>Destination: {product.destination}</p>
-                      <p>Thématique : {product.thematique}</p>
-                      <button className="myButton" onClick={() => addCart(product)}>Ajouter au panier</button>
-                      {state.user.isAdmin === true && (
-                        <button className="myButton" onClick={(e) => handleSubmit(e,product.id)}>Modifier les informations</button>
-                      )}
-                      {state.user.isAdmin === true && (
-                        <button className="myButton" onClick={() => {deleteProduct(product.id)}}>Supprimer le produit</button>
-                      )}
-                    </li>
-                  </article>
                 </div>
-              </div>
-            ))
-        }
-    </div>
-  );
+              </section>
+            </li>
+          )) :
+        arrayMap.map((product) => (
+        <div className="article-container">
+        <div className="slide">
+        <article>
+          <li key={product.id}>
+            <h2>{product.name}</h2>
+            <img src={`${BASE_URL}/img/${product.picture}`} alt={product.name} width="100" height="100" margin="2em" padding="2em"/>
+            {state.user.isAdmin === true && (
+              <p> id : {product.id}</p>)}
+            <p>{product.description}</p>
+            <p>Prix: {product.price}€</p>
+            <p>Destination: {product.destination}</p>
+            <p>Thématique : {product.thematique}</p>
+            <button className="myButton" onClick={() => addCart(product)}>Ajouter au panier</button>
+            {state.user.isAdmin === true && (
+              <button className="myButton" onClick={(e) => handleSubmit(e,product.id)}>Modifier les informations</button>)}
+            {state.user.isAdmin === true && (
+              <button className="myButton" onClick={() => {deleteProduct(product.id)}}>Supprimer le produit</button>)}
+          </li>
+          </article>
+          </div>
+          </div>
+        ))
+    }
+  </div>
+    );
 };
 
 export default SearchProduct;

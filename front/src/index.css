@@ -1,4 +1,4 @@
-/*------------------------------------------------------- Body  -------------------------------------------------*/
+/*------------------------------------------------------- Body // html // fonts  -------------------------------------------------*/
 
 html {
   height: 100%;
@@ -12,20 +12,10 @@ body {
   min-height: 100%;
 }
 
-.content {
-  padding: 20px;
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100px;
-}
-
 a {
   text-decoration: none;
-  cursor: url('../public/paper_plane_resize.png'), pointer;}
+  cursor: url('../public/paper_plane_resize.png') pointer;
+}
 
 a:hover {
   text-decoration: none;
@@ -40,17 +30,6 @@ code {
   src: url('../fonts/BelganAesthetic.ttf') format("truetype");
   font-weight: normal;
   font-style: normal;
-}
-
-/*------------------------------------------- Style pour le header --------------------------------------------- */
-
-.icon {
-  font-size: 15px;
-  margin-left: 3px;
-}
-
-.bg-white {
-  background-color: #d40b0b;
 }
 
 /* ------------------------------------------------- Header menu  ---------------------------------------------------*/
@@ -122,11 +101,6 @@ code {
   z-index: 1;
 }
 
-/*.dropdown-content li a {
-  font-size: 0.8em;   
-}
-*/
-
 .dropdown-content ul {
   display:block;
 }
@@ -135,11 +109,6 @@ code {
   font-size: 0.8em;
   margin: 0;
 }
-
-/*.dropdown-content ul li a {
-  width: 100%;
-  padding: 0.9em;
-}*/
 
 .dropdown .dropdown-right {
   right: 0;
@@ -151,15 +120,11 @@ code {
   display: block;
 }
 
-/* Afficher le contenu du sous-menu lorsqu'on survole le lien */
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+/* Style pour le titre dans le header */
 
 .header_title {
   font-family: "BelganAesthetic";
-  cursor: url('../public/paper_plane_resize.png'), pointer;
+  cursor: url('../public/cursor_plane_resize.png'), pointer;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -172,10 +137,6 @@ code {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 2px;
-}
-
-.header_cart_icon .fa-cart-plus {
-  color: #ffffff;
 }
 
 .header_menu_buttons_left {
@@ -191,48 +152,19 @@ code {
   padding: -1em;
 }
 
-/* -------------------------------------------- Scrolling Menu -------------------------------------------------*/
-
-#bottom_menu {
-  position: fixed;
-  z-index: 10000;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  text-align: center;
-  opacity: 0;
-  background: #000000;
+.header_title:hover {
+  transition : 1000ms;
+  font-size: 20px;
 }
 
-#bottom_menu a {
-  display: inline-block;
-  padding: 15px 10px;
-  margin: 0px 8px;
+.header_title:active {
   color: #ffffff;
-  background: #000000;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 7px;
 }
 
-#bottom_menu a:hover {
-  background: #c6d4d7;
+.header_title {
+  transition: 1000ms;
 }
 
-/*---------------------------------------------------- Navigation  -------------------------------------------------*/
-
-.navigation {
-  display:none;
-  color:#797979;
-  text-align:center;
-  text-transform:uppercase;
-  margin-top:15px;
-  padding:2px 0px;
-}
-
-.navigation a {
-  display:inline-block;
-}
 
 /* ----------------------------------------------------- Footer ------------------------------------------------*/
 
@@ -242,11 +174,6 @@ code {
   bottom: 0;
   width: 100%;
   height: 5%;
-}
-
-.footer-text p {
-  margin-bottom: 0;
-  color: white;
 }
 
 .footer-menu {
@@ -302,25 +229,6 @@ ul {
   margin: 0;
 }
 
-/* Style pour le titre de la section contact */
-.sec-title {
-  position: relative;
-  padding-bottom: 40px;
-}
-
-.sec-title h2 {
-  position: relative;
-  color: #252525;
-  font-size: 36px;
-  font-weight: 700;
-  line-height: 1.5em;
-  display: block;
-}
-
-/* Style pour le titre de la section contact en mode "light" */
-.sec-title.light h2 {
-  color: #ffffff;
-}
 
 /* Style pour la section contact */
 .contact-page-section .inner-container {
@@ -424,8 +332,6 @@ ul {
   border: 1px solid #ddd;
   background-color: #ffffff;
   transition: all .3s ease;
-  -ms-transition: all .3s ease;
-  -webkit-transition: all .3s ease;
 }
 
 .contact-form input[type=text]:focus,
@@ -451,7 +357,6 @@ ul {
   display: inline-block;
   position: relative;
   line-height: 24px;
-  cursor: url('../public/paper_plane_resize.png'), pointer;
   color: #ffffff;
 }
 
@@ -461,7 +366,7 @@ ul {
   background: 0 0;
 }
 
-.contact-form input.error,
+/*.contact-form input.error,
 .contact-form select.error,
 .contact-form textarea.error {
   border-color: red !important;
@@ -476,9 +381,36 @@ ul {
   font-size: 12px;
   color: red;
   font-weight: 500;
+}*/
+/* -------------------------------------------------------- Bouttons -------------------------------------------*/
+
+.myButton{
+
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #000000;
+  padding: 10px 30px;
+  border: solid #000000 2px;
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+  transition : 1000ms;
+  transform: translateY(0);
+  margin: 0.2em;
 }
 
-/*-------------------------------------------- Style pour l'affichage des articles --------------------------------------------*/
+.myButton:hover{
+
+transition : 600ms;
+padding: 10px 31px;
+transform : translateY(-0px);
+background-color: #ffffff;
+color: #000000;
+border: solid 0.5px #000000;
+}
+
+
+/*---------------------------------------------------- Articles ---------------------------------------*/
 
 .article-container {
   
@@ -511,255 +443,100 @@ ul {
   margin-bottom: 1em;
 }
 
-.article-container h2 {
-  font-family: "BelganAesthetic";
-  margin-top: 0;
-  margin-bottom: 1em;
-  font-size: 1.5em;
-}
-
 .article-container p {
   margin-bottom: 1em;
   font-size: 1.2em;
 }
 
-/*.article-container button {
-  background-color: #ffffff;
-  border: none;
-  color: #ffffff;
-  padding: 1em 2em;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 1.2em;
-  margin-top: 1em;
-  cursor: url('../public/paper_plane_resize.png'), pointer;
-}*/
-
 .article-container button:hover {
   background-color: #c6d4d7;
 }
-
-/* -------------------------------------------------------- Bouttons -------------------------------------------*/
-
-.myButton{
-
-  font-family: Roboto, sans-serif;
-  font-weight: bold;
-  font-size: 14px;
-  color: #ffffff;
-  background-color: #000000;
-  padding: 10px 30px;
-  border: solid #000000 2px;
-  box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
-  transition : 1000ms;
-  transform: translateY(0);
-  cursor: url('../public/paper_plane_resize.png'), pointer;
-  margin: 0.2em;
-}
-
-.myButton:hover{
-
-transition : 600ms;
-padding: 10px 31px;
-transform : translateY(-0px);
-background-color: #ffffff;
-color: #000000;
-border: solid 0.5px #000000;
-}
-
-/* Je place le .header_title en dernier pour que l'effet passe avant le reste du CSS */
-
-.header_title:hover {
-  transition : 1000ms;
-  font-size: 20px;
-}
-
-.header_title:active {
-  color: #ffffff;
-}
-
-.header_title {
-  transition: 1000ms;
-}
-
-/*---------------------------------------------------- Articles ---------------------------------------*/
 
 .articles-section {
   display: flex;
   flex-wrap: wrap;
 }
 
-.articles{
-  flex-direction: space-beetween;
+.articles {
+  flex-direction: row;
   justify-content: center;
   margin: 1.2em;
   margin-top: 30px;
-
 }
 
-.articles h2 {
+#article-title {
   font-family: "BelganAesthetic";
+  cursor: pointer;
   margin-top: 0;
   margin-bottom: 1em;
   font-size: 1.5em;
 }
 
-.button-test {
-  display:flex;
-  justify-content: center;
-}
-
-.articles-button {
-  align-items: center;
+#detail-article-title {
+  font-family: "BelganAesthetic";
 }
 
 .article {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-/*	max-width: 120px;
-	max-height: 120px;
-*/	padding: 1.5em;
+	padding: 1.5em;
 	border-radius: 5px;
 	background-color: white;
 	box-shadow: 0 2px 5px 0 rgba(0,0,0,.2);
 	text-align: center;
-	transition: box-shadow 200ms ease-in-out;  
+	transition: box-shadow 200ms ease-in-out;
+}
+
+.article p {
+  font-size: 1.2em;
 }
 
 .article-img img {
+  cursor: pointer;
+  margin: 0.5em;
+  border-radius: 8%;
   max-width: 450px;
   max-height: 450px;
   min-width: 100px;
-  min-height: 300px;  
+  min-height: 300px;
+  transition: transform 0.01s;
+  -webkit-transition: all 1s ease; /* Safari et Chrome */
+  -moz-transition: all 1s ease; /* Firefox */
+  -ms-transition: all 1s ease; /* Internet Explorer 9 */
+  -o-transition: all 1s ease; /* Opera */
+  transition: all 1s ease;  
+}
+
+.article-img img:hover {
+  -ms-transform: scale(1.03); /* IE 9 */
+  -webkit-transform: scale(1.03); /* Safari 3-8 */
+  transform: scale(1.03);
+}
+
+#detail-img {
+  transition: 0;
 }
 
 .article:hover {
   box-shadow: 0 4px 10px 0 rgba(0,0,0,.4);
 }
 
-.fa-cart-plus {
-  font-size: 150%;
-  margin: 0.8em;
+#destination {
+  font-size: 1.1em;
+  margin: 0.3em;
 }
 
-.fa-cart-plus {
-  font-size: 150%;
-  margin: 0.8em;  
+#description {
+  margin: 0.3em;
 }
 
-.fa-cart-plus:hover, .header_cart_icon .fa-cart-plus:hover {
-  color: #067790;
-}
-
-/* responsive */
-
-@media screen and (max-width: 640px){
-  body{
-    margin: 10px 20px;
-  }
-  
-  nav .onglets{
-    margin-top: -10px;
-  }
-  
-/*  .articles .article .left img{
-    height: 100%;
-    width:100%;
-  }*/
-  
-/*  .articles .article .right{
-    margin: 0px;
-    max-width: 100%;
-  }
-  */
-  footer .social-media{
-    margin-top: -20px;
-  }
-}
-
-/* ------------------------------------------------ Test Article ------------------------------------- /*
-
-// variables
-
-$font-stack-sans-serif: Roboto, Helvetica, Arial, sans-serif;
-$font-stack-serif: "Roboto Slab", Times, "Times New Roman", serif;
-$color: #333;
-
-
-
-// mixins
-
-@mixin box-sizing {
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-
-
-// resets
-
-html, body {
-	height: 100%;
-}
-
-html {
-	@include box-sizing;
-}
-*, *:before, *:after {
-	@include box-sizing;
-}
-
-body {
-	padding: 2em;
-	margin: 0;
-	line-height: 1.5;
-	background-color: #eee;
-	font-family: $font-stack-sans-serif;
-	color: $color;
-}
-b
-
-
-/* font awesome */
-.fa {
-	font-family: FontAwesome;
-	font-style: normal;
-}
-
-
-.flex-cont {
+.price {
   display: flex;
-}
-
-.product {
-  align-items: stretch;
   justify-content: flex-start;
-	max-width: 50ch;
-	padding: 2em;
-	border-radius: 5px;
-	margin: auto;
-	background-color: white;
-	box-shadow: 0 2px 5px 0 rgba(0,0,0,.2);
-	text-align: center;
-	transition: box-shadow 200ms ease-in-out;
-		}
-		
-.product:hover {
-  box-shadow: 0 4px 10px 0 rgba(0,0,0,.4);
+  align-items: center;
 }
 
-.product-lower {
-			position: relative;
-			top: 0;
-			opacity: 1;	  
-}
-		
-		.product-lower .product-short-description, .product-lower .product-atc {
-			display: block;
-		}
-		
 .product-rrp {
 	line-height: 1;
 	text-decoration: line-through;
@@ -772,32 +549,14 @@ b
 	font-size: 2em;
 	font-weight: 700;
 }
-.product-lower {
-	top: -5px;
-	opacity: 0;
-	transition: opacity 200ms, top 200ms ease-in-out;
-}
-.product-short-description {
-	display: none;
-	margin-top: 1em;
-	margin-bottom: 1em;
-	color: lighten(color, 25%);
-}
-.product-atc {
-	display: none;
-	padding: .5em;
-	background-color: mediumspringgreen;
-	font-weight: 700;
-	font-size: 1.4em;
-	color: white;
-	transition: opacity 100ms ease-in-out;
-}
 
-	.product-atc:hover {
-		text-decoration: none;
-		opacity: .6;
-	}
+/*-------------------------------------------- responsive -------------------------------------*/
 
+@media screen and (max-width: 640px){
+  body{
+    margin: 10px 20px;
+  }
+}
 
 @media only screen and (max-width:520px) {
 	html, body {
@@ -810,6 +569,28 @@ b
 	}
 }
 
-a {
-  cursor: url('../public/cursor_plane_resize.png'), pointer;
+/* ------------------------------------------------------- icons --------------------------------------------*/
+
+.fa-plane, .fa-store, .fa-heart, .fa-landmark, .fa-water, .fa-music, .fa-fish,  .fa-dog, .fa-store {
+  font-size: 0.75em;
+  margin: 0.2em;
+}
+
+.fa-cart-plus {
+  font-size: 1.8em;
+  margin: 0.4em;
+}
+
+.fa-cart-arrow-down {
+  color: #ffffff;
+  font-size: 1.5em;
+  margin: 0.4em;
+}
+
+.fa-cart-arrow-down:hover {
+  color: #067790;
+}
+
+.fa-cart-plus:hover, .fa-cart-plus:hover {
+  color: #067790;
 }
