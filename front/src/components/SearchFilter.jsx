@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import axios from "axios";
 import {BASE_URL} from "../tools/constante.js";
 
@@ -7,7 +7,8 @@ const SearchFilter = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios.get(`${BASE_URL}/allProducts`)
+    axios
+        .get(`${BASE_URL}/allProducts`)
         .then((response) => setProducts(response.data))
         .catch((err) => console.error(err));
   }, []);
@@ -21,6 +22,7 @@ const SearchFilter = () => {
   );
 
   return (
+    <Fragment>
     <div>
       <SearchFilter value={searchValue} onChange={handleInputChange} />
       <ul>
@@ -35,6 +37,8 @@ const SearchFilter = () => {
         ))}
       </ul>
     </div>
+    
+    </Fragment>
   );
 };
 

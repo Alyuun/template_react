@@ -1,8 +1,10 @@
 import axios from "axios";
 import { BASE_URL } from "../tools/constante.js";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import SearchProduct from "./SearchProduct.jsx";
 import { Fragment } from "react";
+import { StoreContext } from "../tools/context.js";
+import { useNavigate } from "react-router-dom";
 
 const AllProduct = () => {
   const initState = {
@@ -17,6 +19,9 @@ const AllProduct = () => {
   const [searchValue, setSearchValue] = useState(initState);
   const [products, setProducts] = useState([]);
   const [thematiques, setThematiques] = useState([]);
+  const navigate = useNavigate();
+  // Récupération du state et du dispatch
+    const [state, dispatch] = useContext(StoreContext);  
 
   useEffect(() => {
     axios
@@ -47,9 +52,10 @@ const AllProduct = () => {
     return productsFilter;
   };
   
-  const testOnClick = (e) => {
+  const onClick = (e) => {
+    
     e.preventDefault();
-    const {destination, minPrice, maxPrice, thematique} = searchValue;
+    const {destination, minPrice, maxPrice ,thematique} = searchValue;
     
     let productsFilter = products;
     let type="";
@@ -86,35 +92,62 @@ const AllProduct = () => {
     setProductsFiltred(productsFilter);
   };
   
+  console.log(productsFiltred)
+  console.log(products)
+  
   const resetSearch = () => {
     setProductsFiltred([]);
     setSearchValue(initState);
   };
   
+    const handleSubmitProduct = (e) => {
+        e.preventDefault();
+        navigate("/AddProduct");
+    };  
+    
+    const handleSubmitUser = (e) => {
+        e.preventDefault();
+        navigate("/AllUsers");
+    };  
+        
+  
   return (
     <Fragment>
     <div>
-            {/*<input placeholder="Destination" value={searchValue} onChange={handleInputChange} />*/}
-            
-            <form onSubmit={testOnClick}>
-              <input placeholder="Destination" name='destination' value={searchValue.destination}  onChange={handleChange} />
-              <input placeholder="Prix minimum" name='minPrice' value={searchValue.minPrice} onChange={handleChange} />
-              <input placeholder="Prix maximum" name='maxPrice' value={searchValue.maxPrice} onChange={handleChange} />
-              <input placeholder="Nombre de voyageurs"  name='voyageurs' value={searchValue.voyageurs} onChange={handleChange} />
+        {state.user.isAdmin === true && (
+        <div>
+        <h1>Tableau de bord administrateur</h1>
+        <div className="admin">
+           <button className="myButton" onClick={handleSubmitProduct}>Ajouter un nouveau produit</button>
+           <button className="myButton" onClick={handleSubmitUser}>Afficher la liste des utilisateurs</button>
+        </div>
+        </div>
+           )}
+            <form className="form" onSubmit={onClick}>
+              <input className="input" placeholder="Destination" name='destination' value={searchValue.destination}  onChange={handleChange} />
+              <input className="input"  placeholder="Prix minimum" name='minPrice' value={searchValue.minPrice} onChange={handleChange} />
+              <input className="input"  placeholder="Prix maximum" name='maxPrice' value={searchValue.maxPrice} onChange={handleChange} />
+              <input className="input"  placeholder="Nombre de voyageurs"  name='voyageurs' value={searchValue.voyageurs} onChange={handleChange} />
               <select name="thematique" value={searchValue.thematique} onChange={(e) => handleChange(e)}>
                 <option>Choisissez une thématique</option>
-                {thematiques.map((product) => {
+                {thematiques.map((product, thematiqueKey) => {
                   return (
-                    <option value={product.thematique}>{product.thematique}</option>
+                    <option key={thematiqueKey} value={product.thematique}>{product.thematique}</option>
                   );
                 })}
               </select>
-              
-              <input type="submit" className="myButton"  value='Rechercher'/>
+              <input type="submit" className="myButton" value='Rechercher'/>
+              <button onClick={resetSearch} >Tout effacer</button>
             </form>
-              <button className="myButton" onClick={resetSearch}>Tout effacer</button>
+              
         </div>
         <SearchProduct arrayMap={productsFiltred} />
+        {productsFiltred.length > 0 && (
+        <div className="msg-arrow">
+        <h1>N'oubliez pas de regarder nos autres circuits</h1>
+        <i className="fas fa-arrow-down"></i>
+        </div>
+        )}
         <SearchProduct arrayMap={products} />
     </Fragment>
   );

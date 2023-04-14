@@ -27,8 +27,7 @@ const AddUser = () => {
         
         const dataFile = new FormData();
         const files = {...e.target.avatar.files};
-        
-        dataFile.append('files', files[0], files[0].name);
+            
         dataFile.append('nom', userData.nom);
         dataFile.append('prenom', userData.prenom);
         dataFile.append('email', userData.email);
@@ -36,21 +35,43 @@ const AddUser = () => {
         dataFile.append('birthdate', userData.birthdate);
         
         axios.post(`${BASE_URL}/addUser`,dataFile)
-       .then(res => console.log(res));
+           .then(res => console.log(res));
     };
     
     
     return(
         <form onSubmit={submit} encType="multipart/form-data">
-        <label>Choisissez un avatar : </label>
-        <input type='file' name='avatar'/>
-            <input type='text' placeholder='nom' name='nom' onChange={handleChange} value={userData.nom} />
-            <input type='text' placeholder='prenom' name='prenom' onChange={handleChange} value={userData.prenom} />
-            <input type='text' placeholder='email' name='email' onChange={handleChange} value={userData.email} />
-            <input type='password' placeholder='password' name='password' onChange={handleChange} value={userData.password}  />
-            <p>Date d'anniversaire : <input type='date' name='birthdate' onChange={handleChange} value={userData.birthdate} /></p>
-            <input type='submit' className="myButton" />
+        <legend className="legend">Créez votre compte</legend>
+        <div className="input">
+        <p>Choisir un avatar :</p>
+        <input type='file' name='avatar' required />
+        </div>
+        <div className="input">
+            <input type='text' placeholder='Nom' name='nom' onChange={handleChange} value={userData.nom} required />
+            </div>
+            <div className="input">
+            <input type='text' placeholder='Prenom' name='prenom' onChange={handleChange} value={userData.prenom} required />
+            </div>
+
+            <div className="input">
+        <input type="text" name="email" placeholder="Adresse mail" onChange={handleChange} value={userData.email} required />
+                    <span><i className="far fa-envelope"></i></span>
+                     </div>  
+
+                <div className="input">
+                <input type="password" name="password" placeholder="Mot de passe" onChange={handleChange} value={userData.password} required />
+                <span><i className="fa fa-lock"></i></span>
+                </div>
+                <div className="input">
+                <p>Ma date de naissance : </p>
+            <input type='date' name='birthdate' onChange={handleChange} value={userData.birthdate} />
+            </div>
+            <input id="login-button" type='submit' className="myButton" value="Créer son compte"/>
         </form>
+        
+
+
+                
     );
 };
 

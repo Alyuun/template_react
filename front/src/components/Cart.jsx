@@ -34,38 +34,49 @@ const Cart = () => {
     };
     
     const submitCart = () => {
-        axios.post(`${BASE_URL}/addCart`, {product_id : state.panier.id, cart_id : state.user.cart_id})
+      const productIds = state.panier.map(product => product.id);
+      axios.post(`${BASE_URL}/addCart`, {product_id: productIds, cart_id: state.user.cart_id})
         .then(res => console.log(res))
         .catch(err => console.log(err + "erreur du catch submitCart"));
+        
+    alert('Commande envoyée !')    
     };
     
-    /*const modifyCart = (product) => {
-        dispatch({
-            type: "MODIFY_CART",
-            payload: state.panier
-        })
-    }*/
-    
-    return(
-        <div>
-        <ul>
-            {state.panier.map((product, i) => {
-                return(
-                    <div key = {i}>
-                        <img src={`${BASE_URL}/img/${product.picture}`} alt={product.name} width="100" height="100" margin="2em" padding="2em"/>
-                        <p> id : {product.id}</p>
-                        <p>name : {product.name}</p>
-                        <p> description : {product.description} </p>
-                        <p> price: {product.price} </p>
-                        <p> destination : {product.destination} </p>
-                        <button className="myButton" onClick={() => removeCart(product)}>Retirer du panier</button>
-                   </div>
-                );
-            })}
+    return (
+      <div className="cart-container">
+        <div className="heading">
+    <h1>Mon panier</h1>
+    <a href="/allProducts" className="continue">Continuer Shopping</a>
+  </div>
+  <div className="cart">
+        <ul className="cart-items cartWrap">
+          {state.panier.map((product, i) => {
+            return (
+              <div key={i} className="cart-item infoWrap">
+                <img
+                  src={`${BASE_URL}/img/${product.picture}`}
+                  alt={product.name}
+                  width="100"
+                  height="100"
+                />
+                <div className="cart-item-details">
+                  <h3 id="cart-items-details-title">{product.name}</h3>
+                  <p className="description">{product.description}</p>
+                  <p>Prix : {product.price} €</p>
+                  <button className="remove-btn" onClick={() => removeCart(product)}>
+                    Retirer du panier
+                  </button>
+                </div>
+              </div>
+            );
+          })}
         </ul>
-        <p>Total : {parseFloat(state.panier.reduce((acc, product) => acc + product.price, 0))}</p>
-        <button className="myButton" onClick={submitCart}>Commander</button>
+        <div className="cart-summary">
+          <p className="total">Total : {parseFloat(state.panier.reduce((acc, product) => acc + product.price, 0))} €</p>
+          <button className="checkout-btn" onClick={submitCart}>Commander</button>
         </div>
-        );
+      </div>
+      </div>
+    );
 };
 export default Cart;

@@ -40,20 +40,25 @@ const DetailProduct = () => {
                               <img src={`${BASE_URL}/img/${product.picture}`} alt={product.name} />
                           </div>
                           <div className="article-contain">
-                            <h2 id="detail-article-title">{product.name}</h2>
+                          <div className="title-theme">
+                              <h2 id="detail-article-title">{product.name}</h2>
+                              {product.thematique === "Romantique" && ( <div><i className="fas fa-heart"></i>{product.thematique}</div>)}
+                              {product.thematique === "Temples et monuments" && ( <div><i className="fas fa-landmark"></i>{product.thematique}</div>)}
+                              {product.thematique === "Détente" && ( <div><i className="fas fa-water"></i>{product.thematique}</div>)}
+                              {product.thematique === "Festival" && ( <div><i className="fas fa-music"></i>{product.thematique}</div>)}
+                              {product.thematique === "Traditions" && ( <div><i className="fas fa-fish"></i>{product.thematique}</div>)}
+                              {product.thematique === "Famille" && ( <div><i className="fas fa-dog"></i>{product.thematique}</div>)}
+                              {product.thematique === "Shopping" && ( <div><i className="fas fa-store"></i>{product.thematique}</div>)}
+                              </div>
                             <div id="destination">Destination <i className="fas fa-plane"></i> {product.destination}</div>
                             <div id="description">{product.description}</div>
                             <div className="price">
                               <div className="product-rrp">{product.price + 350}€</div>
                               <div className="product-price">{product.price}€</div>
+                            <div class="heading">
+                            <a href="/allProducts" className="continue">Retourner sur la liste des voyages</a>
+                              </div>
                             </div>
-                            {product.thematique === "Romantique" && ( <div><i className="fas fa-heart"></i>{product.thematique}</div>)}
-                            {product.thematique === "Temples et monuments" && ( <div><i className="fas fa-landmark"></i>{product.thematique}</div>)}
-                            {product.thematique === "Détente" && ( <div><i className="fas fa-water"></i>{product.thematique}</div>)}
-                            {product.thematique === "Festival" && ( <div><i className="fas fa-music"></i>{product.thematique}</div>)}
-                            {product.thematique === "Traditions" && ( <div><i className="fas fa-fish"></i>{product.thematique}</div>)}
-                            {product.thematique === "Famille" && ( <div><i className="fas fa-dog"></i>{product.thematique}</div>)}
-                            {product.thematique === "Shopping" && ( <div><i className="fas fa-store"></i>{product.thematique}</div>)}
                           </div>
                         </div>
                       </section>

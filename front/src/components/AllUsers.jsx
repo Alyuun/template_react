@@ -73,23 +73,29 @@ const AllUsers = () => {
 
     
     return(
-        <div>
-            <input placeholder="Recherchez votre destination...." value={searchValue} onChange={handleInputChange} />
+        <div className="user-container">
+        <div id="userslist">
+        <h1>Liste des utilisateurs</h1>
+            <input id="search-user" placeholder="Recherchez un utilisateur" value={searchValue} onChange={handleInputChange} />
+            </div>
+            <div>
+            <div className="users">
+            <ul className="users-items cartWrap">
             {productsFilter.map((userData,i) => {
                 return(
-                <div key = {i}>
-                
-                          
+                <div className="user-item" key = {i}>
                         <img src={`${BASE_URL}/img/${userData.avatar}`} alt={`Avatar de ${userData.nom} ${userData.prenom}`} width="100" height="100" margin="2em" padding="2em"/>
                         <form onSubmit = {(e) => submit(e, userData.id)} encType = "multipart/form-data">
                             <input type = "file" name = "avatar" />
                             <input type = "submit" className="myButton"  value = "changer d'avatar" />
                         </form>
                     <ul>
+                    <div className="user-item-details">
                         <li>Nom:{userData.nom}</li>
                         <li>Prenom:{userData.prenom}</li>
                         <li>Email:{userData.email}</li>
                         <li>Birthdate:{userData.birthdate}</li>
+                        </div>
                     </ul>
                     
                     <button className="myButton" onClick={(e) => handleSubmit(e,userData.id)}> Modifier les informations</button>
@@ -99,6 +105,9 @@ const AllUsers = () => {
                 </div>    
                 );
             })}
+            </ul>
+        </div>
+        </div>
         </div>
         );
 };

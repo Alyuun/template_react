@@ -11,8 +11,8 @@ import AddProduct from "../components/AddProduct";
 import AllProduct from "../components/AllProducts";
 import UploadFile from "../components/UploadFile";
 import UpdateUser from "../components/UpdateUser";
-/*import SearchFilter from "../components/SearchFilter";
-*/import UpdateProduct from "../components/UpdateProduct";
+import SearchFilter from "../components/SearchFilter";
+import UpdateProduct from "../components/UpdateProduct";
 import SearchProduct from "../components/SearchProduct";
 import DetailProduct from "../components/DetailProduct";
 
@@ -33,6 +33,7 @@ const routes = [
     {path:"/updateProduct/:id", component:<UpdateProduct />, auth : "admin"},
     {path:"/searchProduct", component:<SearchProduct />},
     {path:"/contact", component:<Contact />},
+    {path:"/searchFilter", component:<SearchFilter />},
     {path:"/detailProductById/:id", component:<DetailProduct />},
     
     {path:"*", component:<Error404 />}

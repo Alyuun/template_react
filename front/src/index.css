@@ -470,9 +470,13 @@ border: solid 0.5px #000000;
   margin-top: 0;
   margin-bottom: 1em;
   font-size: 1.5em;
+  margin: 0;
+  text-align: left;  
 }
 
 #detail-article-title {
+  padding-left: 1em;
+  padding-right: 1em;
   font-family: "BelganAesthetic";
 }
 
@@ -537,107 +541,351 @@ border: solid 0.5px #000000;
   align-items: center;
 }
 
+.price-div {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;  
+}
+
+.price-div div {
+  display: flex;
+  align-items: baseline;
+}
+
 .product-rrp {
 	line-height: 1;
 	text-decoration: line-through;
 	font-size: 1.19em;
+	font-family: Arial;
 }
 
 .product-price {
   padding: 0.8em;
 	line-height: 1;
-	font-size: 2em;
 	font-weight: 700;
+	margin: 0;
+	padding-left: 0.5rem;
+	padding-right: 0;
+	font-size: 2.3rem;
+	font-family: Arial;
 }
 
+.article{
+	padding: 1rem 1rem 0 1rem;
+}
+
+.articles-section{
+	display: flex;
+	flex-wrap: wrap;
+	width: 85%;
+	margin: auto;
+}
+
+.article-img{
+	margin-bottom: 1rem;
+}
+
+.article-img > img{
+	border-radius: 5px;
+}
+
+#id-article{
+	margin: 0;
+	text-align: left;
+}
+
+
+/*mettre class "thematique" sur p en dessous de #id-article*/
+p.thematique{
+	margin: 0;
+	text-align: left;
+}
+
+
+.title-theme {
+  display: flex;
+  align-items: center;
+}
+
+.msg-arrow {
+  display: flex;
+  align-items: center;
+}
 
 /* -------------------------------------- CSS Add Product ou Add User -----------------*/
 
 .input-add-product {
-  border: solid 0.1em red;
+  display: flex;
+  margin: 0.5em;
+  padding: 0.6em;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ---------------------------------------- admin -----------------------------------*/
+
+.admin {
+  display: flex;
+}
+
+/* ----------------------------- searchbar -----------------------------------*/
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1em;
+}
+
+.form input, select {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+  font-size: 16px;  
+}
+
+.form button {
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #000000;
+  padding-left: 11px;
+  padding-right: 11px;
+  margin : 5px;
+  border: solid #000000 1px;
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+  transition : 1000ms;
+  transform: translateY(0);
+  border-radius: 5px;
+}
+
+.form button:hover {
+  transition : 600ms;
+  transform : translateY(-0px);
+  background-color: #ffffff;
+  color: #000000;
+  border: solid 0.5px #000000;
+}
+
+/* ----------------------------------------- Cart ---------------------------------------*/
+
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2em;
+}
+
+.cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  padding: 1em;
+  width: 100%;
+}
+
+.cart-item img {
+  margin-right: 1em;
+}
+
+.cart-item-details {
+  line-height: 2em;
+  flex: 1;
+}
+
+#cart-items-details-title {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.cart-item-details .description {
+  margin: 0;
+  font-style: italic;
+}
+
+.cart-item-details p {
+  margin: 0;
+}
+
+.remove-btn {
+  background-color: #cc0000;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  margin-top: 1em;
+}
+
+.cart-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  margin-top: 1em;
+}
+
+.total {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.checkout-btn, .remove-btn {
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #000000;
+  padding: 7px 7px;
+  border: solid #000000 2px;
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+  transition : 1000ms;
+  transform: translateY(0);
+  margin: 0.4em;
+}
+
+.checkout-btn:hover, .remove-btn:hover {
+  transition : 600ms;
+  padding: 7px 7px;
+  transform : translateY(-0px);
+  background-color: #ffffff;
+  color: #000000;
+  border: solid 0.5px #000000;  
+}
+ .cf:before, .cf:after {
+	 content: " ";
+	 display: table;
+}
+ .cf:after {
+	 clear: both;
+}
+ .cf {
+	 *zoom: 1;
+}
+
+ .heading {
+   display: flex;
+   justify-content: flex-end;
+   align-items: baseline;
+   align-items: baseline;
+   padding: 1em 0;
+   border-bottom: 1px solid #d0d0d0;
+ }
+ 
+.continue {
+  margin: 2em;
+} 
+ 
+ .heading h1 {
+	 font-family: 'Droid Serif', serif;
+	 font-size: 2em;
+	 float: left;
+}
+ .heading a.continue:link, .heading a.continue:visited {
+	 text-decoration: none;
+	 font-family: 'Montserrat', sans-serif;
+	 letter-spacing: -0.015em;
+	 font-size: 0.75em;
+	 padding: 1em;
+	 color: #fff;
+	 background: black;
+	 font-weight: bold;
+	 border-radius: 50px;
+	 float: right;
+	 text-align: right;
+	 -webkit-transition: all 0.25s linear;
+	 -moz-transition: all 0.25s linear;
+	 -ms-transition: all 0.25s linear;
+	 -o-transition: all 0.25s linear;
+	 transition: all 0.25s linear;
+}
+ .heading a.continue:after {
+	 content: "\276f";
+	 padding: 0.5em;
+	 position: relative;
+	 right: 0;
+	 -webkit-transition: all 0.15s linear;
+	 -moz-transition: all 0.15s linear;
+	 -ms-transition: all 0.15s linear;
+	 -o-transition: all 0.15s linear;
+	 transition: all 0.15s linear;
+}
+ .heading a.continue:hover, .heading a.continue:focus, .heading a.continue:active {
+   color: black;
+   border: solid 0.1em black;
+	 background: white;
+}
+ .heading a.continue:hover:after, .heading a.continue:focus:after, .heading a.continue:active:after {
+	 right: -10px;
+}
+
+
+/*------------------------------------------ liste des utilisateurs ---------------------------------*/
+
+.user-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2em;
+}
+
+.user-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  padding: 1em;
+  width: 100%;
+}
+
+.user-item img {
+  margin-right: 1em;
+}
+
+.user-item-details {
+  padding-left: 1em;
+  padding-right: 1em;
+  line-height: 2em;
+  flex: 1;
+}
+
+#search-user {
+  margin-left: 1em;
+  position: relative;
+  width: 60%;
+  margin: 10px auto;
+} 
+
+#userslist {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  padding: 1em 0;
+  border-bottom: 1px solid #d0d0d0;
 }
 
 /* ------------------------------------------Page de connexion------------------------------*/
 
-/*.login{
-  position: relative;
-  top: 50%;
-	width: 250px;
-  display: table;
-  margin: -150px auto 0 auto;
-  background: #048b9a;
-  border-radius: 4px;
-}
-
-.legend{
-  position: relative;
-  width: 100%;
-  display: block;
-  background: #048b9a;
-  padding: 15px;
-  color: #fff;
-  font-size: 20px;
-}
-
-.lengend:after {
-  background-size: 100px 100px;
-  background-repeat: no-repeat;
-  background-position: 152px -16px;
-  opacity: 0.06;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-}
-
-.input {
-  position: relative;
-  width: 90%;
-  margin: 15px auto;
-  width: 100%;
-  padding: 10px 20px 10px 20px;
-  display: block;
-  border: 1px solid #EDEDED;
-  border-radius: 4px;
-  transition: 0.2s ease-out;
-  color: #808080;
-}
-
-.input:focus {
-  padding: 10px 5px 10px 10px;
-  outline: 0;
-  border-color: #FF7052;  
-}
-
-.submit{
-  width: 45px;
-  height: 45px;
-  display: block;
-  margin: 0 auto -15px auto;
-  background: #fff;
-  border-radius: 100%;
-  border: 1px solid #048b9a;
-  color: #048b9a;
-  font-size: 24px;
-  cursor: pointer;
-  box-shadow: 0px 0px 0px 7px #fff;
-  transition: 0.2s ease-out;
-}
-
-.submit:hover, .submit:focus {
-    background: #048b9a;
-    color: #fff;
-    outline: 0;  
-}*/
-
-.connexion {
-  text-align:;
-}
-
 #login-button {
 	display: block;
-	margin: 20px auto -15px auto;
+	margin: 25px auto -15px auto;
   background: #ffffff;
   color: #048b9a;
   font-weight: bold;
@@ -687,84 +935,98 @@ border: solid 0.5px #000000;
 	 right: 0;
 	 position: absolute;
 }
- .input {
-	 position: relative;
-	 width: 10%;
-	 margin: 15px auto;
+.input {
+  position: relative;
+  padding-left: 40px;
+  padding-right: 40px;
+  width: 60%;
+  margin: 15px auto;
 }
- .input span {
-	 position: absolute;
-	 display: block;
-	 color: #d4d4d4;
-	 left: 10px;
-	 top: 8px;
-	 font-size: 20px;
+
+.input p {
+  font-size: 1.1em;
+  font-weight: bold;
+  font-family: "BelganAesthetic";
 }
- .input input {
-	 width: 100%;
-	 padding: 10px 5px 10px 50px;
-	 display: block;
-	 border: 1px solid #048b9a;
-	 border-radius: 4px;
-	 transition: 0.2s ease-out;
-	 color: #048b9a;
+
+.input span {
+  position: absolute;
+  display: block;
+  color: #d4d4d4;
+  top: 8px;
+  font-size: 20px;
+  right: 0;
 }
- .input input:focus {
-	 padding: 10px 5px 10px 10px;
-	 outline: 0;
-	 border-color: #189a48;
+
+.input input {
+  width: 100%;
+  padding: 10px 5px 10px 10px;
+  display: block;
+  border: 1px solid #048b9a;
+  border-radius: 4px;
+  transition: 0.2s ease-out;
+  color: #048b9a;
+}
+
+.input input:focus {
+  padding: 10px 5px 10px 10px;
+  outline: 0;
+  border-color: #189a48;
 }
 
 .input input:focus::placeholder {
   opacity: 0;
 }
 
- .submit {
-	 width: 45px;
-	 height: 45px;
-	 display: block;
-	 margin: 0 auto -15px auto;
-	 background: #fff;
-	 border-radius: 100%;
-	 border: 1px solid #048b9a;
-	 color: #048b9a;
-	 font-size: 24px;
-	 cursor: pointer;
-	 box-shadow: 0px 0px 0px 7px #fff;
-	 transition: 0.2s ease-out;
-}
- .submit:hover, .submit:focus {
-	 background: #048b9a;
-	 color: #fff;
-	 outline: 0;
-}
- .feedback {
-	 position: absolute;
-	 bottom: -70px;
-	 width: 100%;
-	 text-align: center;
-	 color: #fff;
-	 background: #2ecc71;
-	 padding: 10px 0;
-	 font-size: 12px;
-	 display: none;
-	 opacity: 0;
-}
- .feedback:before {
-	 bottom: 100%;
-	 left: 50%;
-	 border: solid transparent;
-	 content: "";
-	 height: 0;
-	 width: 0;
-	 position: absolute;
-	 pointer-events: none;
-	 border-color: rgba(46,204,113,0);
-	 border-bottom-color: #2ecc71;
-	 border-width: 10px;
-	 margin-left: -10px;
+.submit {
+  width: 45px;
+  height: 45px;
+  display: block;
+  margin: 0 auto -15px auto;
+  background: #fff;
+  border-radius: 100%;
+  border: 1px solid #048b9a;
+  color: #048b9a;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px 7px #fff;
+  transition: 0.2s ease-out;
 }
 
+.submit:hover,
+.submit:focus {
+  background: #048b9a;
+  color: #fff;
+  outline: 0;
+}
+
+.feedback {
+  position: absolute;
+  bottom: -70px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  background: #2ecc71;
+  padding: 10px 0;
+  font-size: 12px;
+  display: none;
+  opacity: 0;
+}
+
+.feedback:before {
+  bottom: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(46, 204, 113, 0);
+  border-bottom-color: #2ecc71;
+  border-width: 10px;
+  margin-left: -10px;
+}
 /*-------------------------------------------- responsive -------------------------------------*/
 
 @media screen and (max-width: 640px){
@@ -794,6 +1056,8 @@ border: solid 0.5px #000000;
 .fa-cart-plus {
   font-size: 1.8em;
   margin: 0.4em;
+  color: #34b25a;
+  cursor: pointer;
 }
 
 .fa-cart-arrow-down {
@@ -808,4 +1072,9 @@ border: solid 0.5px #000000;
 
 .fa-cart-plus:hover, .fa-cart-plus:hover {
   color: #067790;
+}
+
+.fa-arrow-down {
+  padding-left: 1.5em;
+  font-size: 3em;
 }

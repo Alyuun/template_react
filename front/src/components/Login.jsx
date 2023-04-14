@@ -24,7 +24,7 @@ const Login = () => {
         e.preventDefault();
         navigate("/AddUser");
     };
-
+    
     const submit = (e) => {
         e.preventDefault();
         axios.post(`${BASE_URL}/login`, {
@@ -70,14 +70,14 @@ const Login = () => {
                 <div className="connexion">
                 <div className="input">
                     <input type="text" name="email" placeholder="Adresse mail" onChange={handleChange} value={login.email} required />
-                    <span><i className="far fa-envelope icon-focus"></i></span>
+                    <span><i className="far fa-envelope"></i></span>
                 </div>
                 <div className="input">
                 <input type="password" name="password" placeholder="Mot de passe" onChange={handleChange} value={login.password} required />
                 <span><i className="fa fa-lock"></i></span>
                 </div>
                     <button type="submit" className="submit"><i className="fa fa-arrow-right"></i></button>
-                    <button id="login-button" onClick={handleSubmit}>Creer un compte</button>
+                    <button id="login-button" onClick={handleSubmit}>Tu n'as pas de compte ? Clique ici !</button>
             </div>
         </form>
     );

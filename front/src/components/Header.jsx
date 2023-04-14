@@ -24,33 +24,33 @@ const Header = () => {
         <div className="header_menu">
           <div className="header_menu_buttons_left">
             <div className="dropdown">
-              <a href="#">Par Continent</a>
+              <a href="/allProducts">Par Continent</a>
               <div className="dropdown-content">
                 <ul>
                   <li>
                     <ul>
-                      <li><a href="#">Europe</a></li>
-                      <li><a href="#">Amérique</a></li>
-                      <li><a href="#">Asie</a></li>
-                      <li><a href="#">Océanie</a></li>
+                      <li><a href="/allProducts">Europe</a></li>
+                      <li><a href="/allProducts">Amérique</a></li>
+                      <li><a href="/allProducts">Asie</a></li>
+                      <li><a href="/allProducts">Océanie</a></li>
                     </ul>
                   </li>
                 </ul>
               </div>
             </div>
             <div className="dropdown">
-              <a href="#">Par Thématique</a>
+              <a href="/allProducts">Par Thématique</a>
               <div className="dropdown-content">
                 <ul>
                   <li>
                     <ul>
-                      <li><a href="#">Famille</a></li>
-                      <li><a href="#">Temples et Monuments</a></li>
-                      <li><a href="#">Romantique</a></li>
-                      <li><a href="#">Traditions</a></li>
-                      <li><a href="#">Shopping</a></li>
-                      <li><a href="#">Détente</a></li>
-                      <li><a href="#">Festival</a></li>
+                      <li><a href="/allProducts">Famille</a></li>
+                      <li><a href="/allProducts">Temples et Monuments</a></li>
+                      <li><a href="/allProducts">Romantique</a></li>
+                      <li><a href="/allProducts">Traditions</a></li>
+                      <li><a href="/allProducts">Shopping</a></li>
+                      <li><a href="/allProducts">Détente</a></li>
+                      <li><a href="/allProducts">Festival</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -62,7 +62,6 @@ const Header = () => {
               <div className="dropdown-right">
                 {state.user.isLogged === false && (
                   <a href="/login">Se connecter</a>
-                  /*<button className="myButton"><NavLink to="/login">Se connecter</NavLink></button>*/
                 )}
                 {state.user.isLogged === true && (
                   <Fragment>

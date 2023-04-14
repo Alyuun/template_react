@@ -10,26 +10,27 @@ const emailExist  = async (email) => {
 
 export default async (req, res) => {
     const saltRounds = 10;
-    //const avatar = "avatar_default.jpg"
+    const defaultAvatar = "avatar_default.jpg";
     const sql = "INSERT INTO users (role_id, nom, prenom, email, password, birthdate, avatar) VALUES (2, ?, ?, ?, ?, ?, ?)";
     const sqlCart = "INSERT INTO cart (user_id) VALUES (?)";
     
-    const {nom, prenom, email, password, birthdate, files} = req.body;
-    //console.log({});
-    
+    const {nom, prenom, email, password, birthdate} = req.body;
     const mpdHash = await bcrypt.hash(password,saltRounds);
-    const paramsSql = [nom, prenom, email, mpdHash, birthdate, files];
+    let avatar = defaultAvatar;
+    if(req.body.files){
+        avatar = req.body.files;
+    }
+    const paramsSql = [nom, prenom, email, mpdHash, birthdate, avatar];
     
     const emailPresent = await emailExist(email);
     
-    if(password.length <= 8){
-        return res.json({response:'mot de passe trop court'});
+    if(password.length <= 5){
+        return res.json({response:'mot de passe trop court, 5 caractères minimum !'});
     }
     
     if(emailPresent) {
         return res.json({response:'email déjà présent'});
     }
-    
     
     try {
         const createUser  = await asyncQuery(sql,paramsSql);
@@ -41,4 +42,4 @@ export default async (req, res) => {
         res.json({response:'error'});
         console.log(err);
     }
-};
+}; 

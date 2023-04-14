@@ -1,7 +1,8 @@
 import axios from "axios";
 import {BASE_URL} from "../tools/constante.js";
-import {useState} from "react";
+import {useState } from "react";
 import {useNavigate} from "react-router-dom";
+
 
 const AddProduct = () => {
     const navigate = useNavigate();
@@ -42,13 +43,15 @@ const AddProduct = () => {
     
     return(
         <form onSubmit={submit}>
-        <input className="input-add-product" type = "text" placeholder = "name" name = "name" onChange = {handleChange} value = {productData.name} />
-        <input className="input-add-product" type = "text" placeholder = "description" name = "description" onChange = {handleChange} value = {productData.description} />
-        <input className="input-add-product" type = "number" placeholder = "price" name = "price" onChange = {handleChange} value = {productData.price} />
-        <input className="input-add-product" type = "text" placeholder = "destination" name = "destination" onChange = {handleChange} value = {productData.destination} />
-        <input className="input-add-product" type = "text" placeholder = "thematique" name = "thematique" onChange = {handleChange} value = {productData.thematique} />
+        <h1>Ajouter un nouveau produit</h1>
+        <input className="input-add-product" type = "text" placeholder = "Nom" name = "name" onChange = {handleChange} value = {productData.name} />
+        <input className="input-add-product" type = "text" placeholder = "Description" name = "description" onChange = {handleChange} value = {productData.description} />
+        <input className="input-add-product" type = "number" placeholder = "Prix" name = "price" onChange = {handleChange} value = {productData.price} />
+        <input className="input-add-product" type = "text" placeholder = "Destination" name = "destination" onChange = {handleChange} value = {productData.destination} />
+        <input className="input-add-product" type = "text" placeholder = "Thématique" name = "thematique" onChange = {handleChange} value = {productData.thematique} />
+        <label>Choisir une image produit :</label>
         <input className="input-add-product" type='file' name='picture'/>
-        <input className="input-add-product" type="submit" className="myButton" />
+        <input className="input-add-product" type="submit" className="myButton"  />
         </form>
         );
 };
