@@ -48,7 +48,7 @@ const Contact = () => {
               aria-hidden="false"
               tabIndex="0"
             ></iframe>		
-      			<h2>Contactez-nous</h2>
+      			<h2 id="contact-title">Contactez-nous</h2>
       		</div>
       		<div className="inner-container">
       			<div className="row clearfix">

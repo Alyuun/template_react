@@ -66,13 +66,24 @@ const Login = () => {
 
     return (
         <form onSubmit={submit}>
-            <input type="text" name="email" placeholder="login" onChange={handleChange} value={login.email} />
-            <input type="password" name="password" placeholder="Password" onChange={handleChange} value={login.password} />
-            <input type='submit' className="myButton" />
-            <button className="myButton" onClick={handleSubmit}>Creer un compte</button>
+                <legend className="legend">Connexion</legend>
+                <div className="connexion">
+                <div className="input">
+                    <input type="text" name="email" placeholder="Adresse mail" onChange={handleChange} value={login.email} required />
+                    <span><i className="far fa-envelope icon-focus"></i></span>
+                </div>
+                <div className="input">
+                <input type="password" name="password" placeholder="Mot de passe" onChange={handleChange} value={login.password} required />
+                <span><i className="fa fa-lock"></i></span>
+                </div>
+                    <button type="submit" className="submit"><i className="fa fa-arrow-right"></i></button>
+                    <button id="login-button" onClick={handleSubmit}>Creer un compte</button>
+            </div>
         </form>
     );
 };
 
 export default Login;
 
+/*<input type='submit' classNameName="myButton" />
+*/

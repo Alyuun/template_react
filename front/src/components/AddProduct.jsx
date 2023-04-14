@@ -42,13 +42,13 @@ const AddProduct = () => {
     
     return(
         <form onSubmit={submit}>
-        <input type = "text" placeholder = "name" name = "name" onChange = {handleChange} value = {productData.name} />
-        <input type = "text" placeholder = "description" name = "description" onChange = {handleChange} value = {productData.description} />
-        <input type = "number" placeholder = "price" name = "price" onChange = {handleChange} value = {productData.price} />
-        <input type = "text" placeholder = "destination" name = "destination" onChange = {handleChange} value = {productData.destination} />
-        <input type = "text" placeholder = "thematique" name = "thematique" onChange = {handleChange} value = {productData.thematique} />
-        <input type='file' name='picture'/>
-        <input type="submit" className="myButton" />
+        <input className="input-add-product" type = "text" placeholder = "name" name = "name" onChange = {handleChange} value = {productData.name} />
+        <input className="input-add-product" type = "text" placeholder = "description" name = "description" onChange = {handleChange} value = {productData.description} />
+        <input className="input-add-product" type = "number" placeholder = "price" name = "price" onChange = {handleChange} value = {productData.price} />
+        <input className="input-add-product" type = "text" placeholder = "destination" name = "destination" onChange = {handleChange} value = {productData.destination} />
+        <input className="input-add-product" type = "text" placeholder = "thematique" name = "thematique" onChange = {handleChange} value = {productData.thematique} />
+        <input className="input-add-product" type='file' name='picture'/>
+        <input className="input-add-product" type="submit" className="myButton" />
         </form>
         );
 };
